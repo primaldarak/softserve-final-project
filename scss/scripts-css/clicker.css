@@ -1,0 +1,69 @@
+.clicker-click-btn {
+  aspect-ratio: 1/1;
+  height: 50%;
+  border-radius: 50%;
+  position: relative;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0px 3px 6px 3px #38ef7d;
+}
+.clicker-click-btn:hover {
+  transition-duration: 0.1s;
+  background-color: #ffffd2;
+}
+
+.clicker-click-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.1s;
+  box-shadow: 0 0 10px 20px #ffffd2;
+}
+
+.clicker-click-btn:active:after {
+  box-shadow: 0 0 0 0 #ffffd2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.clicker-click-btn:active {
+  top: 1px;
+}
+
+.clicker-info {
+  width: 100%;
+  flex: 0.5;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.clicker-reset-btn {
+  height: 30%;
+  width: 15%;
+  font-size: 1.5rem;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.clicker-reset-btn:hover {
+  transform: scale(1.02);
+
+  background-color: #ffffd2;
+}
+.clicker-reset-btn:active {
+  transform: scale(0.98);
+}

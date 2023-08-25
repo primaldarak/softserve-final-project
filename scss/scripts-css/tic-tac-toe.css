@@ -1,0 +1,92 @@
+td {
+  border: 2px solid black;
+  height: 100px;
+  width: 100px;
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+table tr:first-child td {
+  border-top: none;
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+table tr td:first-child {
+  border-left: none;
+}
+table tr td:last-child {
+  border-right: none;
+}
+
+.choose-difficulty {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.difficulty-btn {
+  height: 20%;
+  width: 15%;
+  min-width: 105px;
+  max-width: 135px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.difficulty-btn:hover {
+  background-color: #ffffd2;
+}
+
+.show-tic-tac-toe {
+  flex: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.endgame {
+  width: 310px;
+  height: 150px;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #ffffd2;
+  opacity: 0.98;
+  color: black;
+  font-size: 3rem;
+  margin-bottom: 200px;
+}
+
+.winner {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.reset {
+  height: 10%;
+  width: 35%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.reset:hover {
+  transform: scale(1.02);
+  background-color: #ffffd2;
+}
+.reset:active {
+  transform: scale(0.98);
+}
+
+.active {
+  background-color: #ffffd2;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/reset.css">
+    <link rel="stylesheet" href="./scss/main.css">
+    <link rel="stylesheet" href="./scss/scripts-css/clicker.css">
+    <link rel="stylesheet" href="./scss/scripts-css/tic-tac-toe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Mini Games</title>
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="header-center">
+            <h1 class="welcome">Welcome</h1>
+            <h3 class="logout hide">Logout</h3>
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="login-window animate__animated ">
+            <input type="input" class="login-input" id="login-input" placeholder="Enter Login" name="login">
+            <div class="input-button">
+                <button class="login-btn" id="login-btn">Login</button>
+                <p class="login-error"></p>
+            </div>
+        </div>
+
+        <div class="minigames-section hide">
+            <div class="minigames-collection animate__animated ">
+                <div class="clicker minigame-box">
+                    <div class="minigame-icon"><i class="fa-solid fa-arrow-pointer fa-2xl"></i></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Clicker</h3>
+                        <p class="minigame-description">Click as fast as you can.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="clicker" name="Clicker"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="tic-tac-toe minigame-box">
+                    <div class="minigame-icon"><i class="fa-solid fa-x fa-xl"><i class="fa-solid fa-o"></i></i></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Tic-Tac-Toe</h3>
+                        <p class="minigame-description">Test your skills in Tic-Tac-Toe against artificial intelligence.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="tic-tac-toe" name="Tic-Tac-Toe"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="puzzle minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Puzzle</h3>
+                        <p class="minigame-description">Put pieces together to get whole picture.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="puzzle" name="Puzzle"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="fire-range minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Gun Range</h3>
+                        <p class="minigame-description">Shoot as many targets as you can.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="fire-range" name="Gun Range"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="mini-golf minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Mini Golf</h3>
+                        <p class="minigame-description">Just as regular Golf but mini.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="mini-golf" name="Mini Golf"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="moto-racing minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Moto Racing</h3>
+                        <p class="minigame-description">Challenge for the first place in motorcycle race.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="moto-racing" name="Moto Racing"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="space-wars minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Space Wars</h3>
+                        <p class="minigame-description">Survive as long as you can defending your spaceship against
+                            aliens.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="space-wars" name="Space Wars"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <div class="blocks minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Make a shape</h3>
+                        <p class="minigame-description">Move blocks is correct order to create reght shape.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="blocks" name="Make a shape"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <!-- <div class="butterfly minigame-box">
+                    <div class="minigame-icon"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Butterfly</h3>
+                        <p class="minigame-description">minigame Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="butterfly"><i class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="show-minigames animate__animated hide">
+                <i class="return-to-collection fa-solid fa-arrow-left-long fa-2xl"></i>
+                <div class="play-minigames"></div>
+            </div>
+        </div>
+    </section>
+    <script src="./main.js"></script>
+</body>
+
+</html>

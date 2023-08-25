@@ -1,0 +1,241 @@
+body {
+  width: 100vw;
+  height: 95vh;
+  margin: auto;
+  background-color: #c5fad5;
+  overflow: hidden;
+}
+
+section.header {
+  width: 100%;
+  height: 5%;
+  margin-bottom: auto;
+  background-color: #ffffd2;
+}
+section.header .header-center {
+  max-width: 1024px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.header .header-center h1 {
+  font-size: 2rem;
+  margin: 10px;
+}
+section.header .header-center h3 {
+  font-size: 1.5rem;
+  margin: 10px;
+  cursor: pointer;
+}
+
+section.main-section {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: inset 0px 6px 4px 0px #38ef7d;
+}
+
+.login-window {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 50%;
+  max-height: 300px;
+  background-color: #ffffd2;
+  box-shadow: -9px 9px 11px 4px #38ef7d;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.login-input {
+  width: 50%;
+  background-color: transparent;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  border: 0;
+  border-bottom: 2px solid black;
+}
+.login-input:focus {
+  outline: none;
+}
+.login-input::-moz-placeholder {
+  font-size: 1rem;
+  padding-left: auto;
+  padding-right: auto;
+  color: black;
+}
+.login-input::placeholder {
+  font-size: 1rem;
+  padding-left: auto;
+  padding-right: auto;
+  color: black;
+}
+
+.input-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-button .login-error {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: red;
+  transition: 0.5s;
+}
+
+.login-btn {
+  position: relative;
+  font-size: 1rem;
+  width: 20%;
+  height: 100%;
+  background-color: transparent;
+  border: 2px solid black;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.login-btn:hover {
+  transition-duration: 0.1s;
+  background-color: #c5fad5;
+}
+.login-btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 1s;
+  box-shadow: 0 0 10px 20px #c5fad5;
+}
+.login-btn:active:after {
+  box-shadow: 0 0 0 0 #c5fad5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.login-btn:active {
+  top: 1px;
+}
+
+.minigames-section {
+  width: 90%;
+  max-width: 1024px;
+  height: 80%;
+  background-color: transparent;
+}
+
+.minigames-collection {
+  width: 100%;
+  height: 100%;
+  min-width: 450px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.minigame-box {
+  width: 90%;
+  height: 10%;
+  background-color: #ffffd2;
+  margin: 10px;
+  box-shadow: 0px 5px 10px 3px #38ef7d;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.minigame-icon {
+  flex: 1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.minigame-info {
+  flex: 3;
+}
+
+.btn-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.minigame-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-arrow-right-long {
+  transform: scale(1.23);
+}
+.fa-arrow-right-long:hover {
+  transform: scale(1.53);
+}
+.fa-arrow-right-long:active {
+  transform: scale(1.14);
+}
+
+.show-minigames {
+  height: 100%;
+}
+
+.play-minigames {
+  width: 100%;
+  height: 97%;
+  min-width: 450px;
+  box-shadow: inset 0px 0px 11px 6px #38ef7d;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.return-to-collection {
+  height: 3%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.return-to-collection:hover {
+  transform: scale(1.63);
+}
+.return-to-collection:active {
+  transform: scale(1.44);
+}
+
+.hide {
+  display: none;
+  transition: 0.5s;
+}/*# sourceMappingURL=main.css.map */
