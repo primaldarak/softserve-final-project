@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginWindow.classList.add("animate__backInDown");
 
     const logoutTimeout = setTimeout(() => {
+      scoreboardBtn.classList.add("hide");
       scoreboardWindow.classList.add("hide");
       minigamesColection.classList.remove("hide");
       minigamesSection.classList.add("hide");
