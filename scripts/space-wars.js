@@ -39,7 +39,6 @@ function createSpaceWars() {
   };
 
   let shipImg;
-  const shipImage = "/img/player.png";
   let shipVelocityX = tileSize;
 
   let alienArray = [];
@@ -48,7 +47,6 @@ function createSpaceWars() {
   let alienX = tileSize;
   let alienY = tileSize;
   let alienImg;
-  const alienImage = "../img/alien.png";
 
   let alienRows = 2;
   let alienColumns = 3;
