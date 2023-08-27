@@ -60,7 +60,7 @@ function createSpaceWars() {
   let gameOver = true;
 
   // window.addEventListener("load", addGame);
-  document.onload = addGame();
+  window.onload = addGame();
   function addGame() {
     const minigameWindow = document.querySelector(".play-minigames");
 
@@ -114,7 +114,7 @@ function createSpaceWars() {
         //if alien touches the borders
         if (alien.x + alien.width >= board.width || alien.x <= 0) {
           alienVelocityX *= -1;
-          alien.x += alienVelocityX * 4;
+          alien.x += alienVelocityX * 2;
 
           for (let j = 0; j < alienArray.length; j++) {
             alienArray[j].y += allienHeigth;
