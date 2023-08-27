@@ -68,13 +68,13 @@ function createSpaceWars() {
 
     //load images
     shipImg = new Image();
-    shipImg.src = shipImage;
+    shipImg.src = "../img/player.png";
     shipImg.onload = function (params) {
       context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     };
 
     alienImg = new Image();
-    alienImg.src = alienImage;
+    alienImg.src = "../img/alien.png";
     createAliens();
 
     requestAnimationFrame(update);
