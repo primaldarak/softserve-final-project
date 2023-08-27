@@ -8,7 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginInput = document.querySelector("#login-input");
   const loginButton = document.querySelector("#login-btn");
   const welcome = document.querySelector(".welcome");
-  const logoutBtn = document.querySelector(".header-center .logout");
+  const scoreboardBtn = document.querySelector(".header-center .scoreboard-btn");
+  const scoreboardWindow = document.querySelector(".scoreboard-window");
+  const scoreboard = document.querySelector(".scoreboard");
+  const scoreboardInfo = document.querySelector(".scoreboard-info");
+  const selectedGameScore = document.querySelector("#scoreboard-select");
+  const logoutBtn = document.querySelector(".header-center .logout-btn");
   const minigamesSection = document.querySelector(".minigames-section");
   const minigamesColection = document.querySelector(".minigames-collection");
   const playBtn = [...document.querySelectorAll(`.minigame-btn[data-game]`)];
@@ -26,8 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentUser = sessionStorage.getItem(CURRENT_USER);
     welcome.innerHTML = `Welcome, ${currentUser}`;
     loginWindow.classList.add("hide");
-    document.querySelector(".header-center .logout").classList.remove("hide");
+    document.querySelector(".header-center .logout-btn").classList.remove("hide");
     minigamesSection.classList.remove("hide");
+    scoreboardBtn.classList.remove("hide");
   }
 
   function loginUser() {
@@ -54,14 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
     sessionStorage.setItem(CURRENT_USER, loginInputValue);
 
     loginWindow.classList.add("animate__backOutUp");
+    minigamesColection.classList.add("animate__backInUp");
     const showCollectionTimeout = setTimeout(() => {
       loginWindow.classList.toggle("hide");
-      document.querySelector(".header-center .logout").classList.remove("hide");
+      logoutBtn.classList.remove("hide");
+      scoreboardBtn.classList.remove("hide");
       minigamesSection.classList.remove("hide");
       minigamesColection.classList.remove("animate__backOutDown");
       welcome.innerHTML = `Welcome, ${loginInputValue}`;
     }, 600);
-    minigamesColection.classList.add("animate__backInUp");
 
     loginInput.value = "";
   }
@@ -70,6 +77,49 @@ document.addEventListener("DOMContentLoaded", () => {
   loginInput.addEventListener("keydown", function (e) {
     if (e.code === "Enter") {
       loginUser();
+    }
+  });
+
+  selectedGameScore.addEventListener("change", refreshScoreboard);
+  function refreshScoreboard() {
+    const users = JSON.parse(localStorage.getItem(USERS));
+    scoreboardInfo.innerHTML = ``;
+
+    users.forEach((e, i) => {
+      if (e.bestScore[selectedGameScore.value] == undefined) {
+        e.bestScore[selectedGameScore.value] = 0;
+      }
+      const score = document.createElement("p");
+      score.innerHTML = `${i + 1}. ${e.login} - ${e.bestScore[`${selectedGameScore.value}`]}`;
+      scoreboardInfo.appendChild(score);
+    });
+  }
+
+  scoreboardBtn.addEventListener("click", function showScoreboard() {
+    if (!minigameShowWindow.classList.contains("hide")) {
+      minigameShowWindow.classList.add("animate__backOutDown");
+      scoreboardWindow.classList.add("animate__backInDown");
+      const scoreboardTimeout = setTimeout(() => {
+        minigamesSection.classList.add("hide");
+        scoreboardWindow.classList.remove("hide");
+        setTimeout(() => {
+          scoreboardBtn.classList.add("hide");
+          minigameShowWindow.classList.remove("animate__backOutDown");
+          scoreboardWindow.classList.remove("animate__backInDown");
+        }, 1000);
+      }, 650);
+    } else if (!minigamesColection.classList.contains("hide")) {
+      minigamesColection.classList.add("animate__backOutDown");
+      scoreboardWindow.classList.add("animate__backInDown");
+      const scoreboardTimeout = setTimeout(() => {
+        minigamesSection.classList.add("hide");
+        scoreboardWindow.classList.remove("hide");
+        setTimeout(() => {
+          scoreboardBtn.classList.add("hide");
+          minigamesColection.classList.remove("animate__backOutDown");
+          scoreboardWindow.classList.remove("animate__backInDown");
+        }, 1000);
+      }, 650);
     }
   });
 
@@ -85,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginWindow.classList.add("animate__backInDown");
 
     const logoutTimeout = setTimeout(() => {
-      document.querySelector(".header-center .logout").classList.remove("hide");
+      scoreboardWindow.classList.add("hide");
       minigamesColection.classList.remove("hide");
       minigamesSection.classList.add("hide");
       welcome.innerHTML = `Welcome`;
@@ -128,17 +178,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const returnBtn = document.querySelector(".return-to-collection");
-  returnBtn.addEventListener("click", () => {
-    minigameShowWindow.classList.add("animate__backOutRight");
-    minigamesColection.classList.add("animate__backInLeft");
-    const returnMinigameTimeout = setTimeout(() => {
-      minigamesColection.classList.remove("hide");
-      minigameShowWindow.classList.add("hide");
-      setTimeout(() => {
-        minigamesColection.classList.remove("animate__backInLeft");
-        minigameShowWindow.classList.remove("animate__backOutRight");
-      }, 1000);
-    }, 400);
-  });
+  const returnBtn = document.querySelectorAll(".return-to-collection");
+  returnBtn.forEach((e) =>
+    e.addEventListener("click", () => {
+      if (!minigameShowWindow.classList.contains("hide")) {
+        minigameShowWindow.classList.add("animate__backOutRight");
+        minigamesColection.classList.add("animate__backInLeft");
+        scoreboardWindow.classList.add("animate__backOutUp");
+
+        const returnMinigameTimeout = setTimeout(() => {
+          minigamesSection.classList.remove("hide");
+          minigamesColection.classList.remove("hide");
+          minigameShowWindow.classList.add("hide");
+          scoreboardWindow.classList.add("hide");
+          setTimeout(() => {
+            scoreboardBtn.classList.remove("hide");
+            minigamesColection.classList.remove("animate__backInLeft");
+            minigameShowWindow.classList.remove("animate__backOutRight");
+            scoreboardWindow.classList.remove("animate__backOutUp");
+          }, 1000);
+        }, 400);
+      } else if (!minigamesColection.classList.contains("hide")) {
+        scoreboardWindow.classList.add("animate__backOutUp");
+        minigamesColection.classList.add("animate__backInUp");
+        const returnMinigameTimeout = setTimeout(() => {
+          minigamesSection.classList.remove("hide");
+          scoreboardWindow.classList.add("hide");
+          setTimeout(() => {
+            scoreboardBtn.classList.remove("hide");
+            minigamesColection.classList.remove("animate__backInUp");
+            scoreboardWindow.classList.remove("animate__backOutUp");
+          }, 1000);
+        }, 400);
+      }
+    })
+  );
+
+  refreshScoreboard();
 });

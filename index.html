@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./scss/main.css">
     <link rel="stylesheet" href="./scss/scripts-css/clicker.css">
     <link rel="stylesheet" href="./scss/scripts-css/tic-tac-toe.css">
+    <link rel="stylesheet" href="./scss/scripts-css/space-wars.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,7 +21,8 @@
     <section class="header">
         <div class="header-center">
             <h1 class="welcome">Welcome</h1>
-            <h3 class="logout hide">Logout</h3>
+            <h3 class="scoreboard-btn hide">Scoreboard</h3>
+            <h3 class="logout-btn hide">Logout</h3>
         </div>
     </section>
 
@@ -30,6 +32,19 @@
             <div class="input-button">
                 <button class="login-btn" id="login-btn">Login</button>
                 <p class="login-error"></p>
+            </div>
+        </div>
+
+        <div class="scoreboard-window animate__animated hide">
+            <i class="return-to-collection fa-solid fa-arrow-left-long fa-2xl"></i>
+            <div class="scoreboard">
+                <select name="scoreboard" id="scoreboard-select">
+                    <option value="clicker" class="scoreboard-option" selected>Clicker</option>
+                    <option value="spaceWars" class="scoreboard-option">Space Wars</option>
+                </select>
+                <div class="scoreboard-info">
+
+                </div>
             </div>
         </div>
 
@@ -59,7 +74,20 @@
                                 class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
                     </div>
                 </div>
-                <div class="puzzle minigame-box">
+                <div class="space-wars minigame-box">
+                    <div class="minigame-icon"><img src="./scripts/space-wars/img/player.png" alt="spaceship"></div>
+                    <div class="minigame-info">
+                        <h3 class="minigame-name">Space Wars (Restart btn in progress)</h3>
+                        <p class="minigame-description">Survive as long as you can defending your spaceship against
+                            aliens.
+                        </p>
+                    </div>
+                    <div class="btn-box">
+                        <button class="minigame-btn" data-game="space-wars" name="Space Wars"><i
+                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
+                    </div>
+                </div>
+                <!-- <div class="puzzle minigame-box">
                     <div class="minigame-icon"></div>
                     <div class="minigame-info">
                         <h3 class="minigame-name">Puzzle</h3>
@@ -71,10 +99,11 @@
                                 class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
                     </div>
                 </div>
+            -->
                 <div class="fire-range minigame-box">
                     <div class="minigame-icon"></div>
                     <div class="minigame-info">
-                        <h3 class="minigame-name">Gun Range</h3>
+                        <h3 class="minigame-name">Gun Range (Work in Progress)</h3>
                         <p class="minigame-description">Shoot as many targets as you can.
                         </p>
                     </div>
@@ -83,7 +112,7 @@
                                 class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
                     </div>
                 </div>
-                <div class="mini-golf minigame-box">
+                <!-- <div class="mini-golf minigame-box">
                     <div class="minigame-icon"></div>
                     <div class="minigame-info">
                         <h3 class="minigame-name">Mini Golf</h3>
@@ -94,44 +123,31 @@
                         <button class="minigame-btn" data-game="mini-golf" name="Mini Golf"><i
                                 class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
                     </div>
+            </div>
+            <div class="moto-racing minigame-box">
+                <div class="minigame-icon"></div>
+                <div class="minigame-info">
+                    <h3 class="minigame-name">Moto Racing</h3>
+                    <p class="minigame-description">Challenge for the first place in motorcycle race.
+                    </p>
                 </div>
-                <div class="moto-racing minigame-box">
-                    <div class="minigame-icon"></div>
-                    <div class="minigame-info">
-                        <h3 class="minigame-name">Moto Racing</h3>
-                        <p class="minigame-description">Challenge for the first place in motorcycle race.
-                        </p>
-                    </div>
-                    <div class="btn-box">
-                        <button class="minigame-btn" data-game="moto-racing" name="Moto Racing"><i
-                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
-                    </div>
+                <div class="btn-box">
+                    <button class="minigame-btn" data-game="moto-racing" name="Moto Racing"><i
+                            class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
                 </div>
-                <div class="space-wars minigame-box">
-                    <div class="minigame-icon"></div>
-                    <div class="minigame-info">
-                        <h3 class="minigame-name">Space Wars</h3>
-                        <p class="minigame-description">Survive as long as you can defending your spaceship against
-                            aliens.
-                        </p>
-                    </div>
-                    <div class="btn-box">
-                        <button class="minigame-btn" data-game="space-wars" name="Space Wars"><i
-                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
-                    </div>
+            </div>
+            <div class="blocks minigame-box">
+                <div class="minigame-icon"></div>
+                <div class="minigame-info">
+                    <h3 class="minigame-name">Make a shape</h3>
+                    <p class="minigame-description">Move blocks is correct order to create reght shape.
+                    </p>
                 </div>
-                <div class="blocks minigame-box">
-                    <div class="minigame-icon"></div>
-                    <div class="minigame-info">
-                        <h3 class="minigame-name">Make a shape</h3>
-                        <p class="minigame-description">Move blocks is correct order to create reght shape.
-                        </p>
-                    </div>
-                    <div class="btn-box">
-                        <button class="minigame-btn" data-game="blocks" name="Make a shape"><i
-                                class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
-                    </div>
+                <div class="btn-box">
+                    <button class="minigame-btn" data-game="blocks" name="Make a shape"><i
+                            class="fa-solid fa-arrow-right-long fa-2xl"></i></button>
                 </div>
+            </div> -->
                 <!-- <div class="butterfly minigame-box">
                     <div class="minigame-icon"></div>
                     <div class="minigame-info">
@@ -147,7 +163,7 @@
             </div>
             <div class="show-minigames animate__animated hide">
                 <i class="return-to-collection fa-solid fa-arrow-left-long fa-2xl"></i>
-                <div class="play-minigames"></div>
+                <div class="play-minigames "></div>
             </div>
         </div>
     </section>

@@ -21,7 +21,7 @@ function createClicker() {
   clickerInfo.className = "clicker-info";
 
   const resetBtn = document.createElement("button");
-  resetBtn.className = "clicker-reset-btn";
+  resetBtn.className = "clicker-reset-btn"; 
   resetBtn.innerHTML = "Reset";
 
   const getBestScore = document.createElement("p");

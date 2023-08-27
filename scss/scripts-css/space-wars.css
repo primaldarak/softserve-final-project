@@ -1,0 +1,18 @@
+.board {
+  background-image: url(../../scripts/space-wars/img/space.png);
+}
+
+.start-btn {
+  font-size: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  transform: scale(1.02);
+
+  background-color: #ffffd2;
+}
+.start-btn:active {
+  transform: scale(0.98);
+}

@@ -1,6 +1,5 @@
 function createTicTacToe() {
   const minigameWindow = document.querySelector(".play-minigames");
-  console.log(minigameWindow);
   const chooseDifficulty = document.createElement("div");
   chooseDifficulty.classList.add("choose-difficulty");
   const difficulties = ["Easy", "Medium", "Hard"];
