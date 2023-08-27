@@ -1,5 +1,5 @@
 .board {
-  background-image: url(../../scripts/space-wars/img/space.png);
+  background-image: url(/img/space.png);
 }
 
 .start-btn {

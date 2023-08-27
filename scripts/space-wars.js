@@ -39,6 +39,7 @@ function createSpaceWars() {
   };
 
   let shipImg;
+  const shipImage = "/img/player.png";
   let shipVelocityX = tileSize;
 
   let alienArray = [];
@@ -47,6 +48,7 @@ function createSpaceWars() {
   let alienX = tileSize;
   let alienY = tileSize;
   let alienImg;
+  const alienImage = "../img/alien.png";
 
   let alienRows = 2;
   let alienColumns = 3;
@@ -68,13 +70,13 @@ function createSpaceWars() {
 
     //load images
     shipImg = new Image();
-    shipImg.src = "../img/player.png";
+    shipImg.src = shipImage;
     shipImg.onload = function (params) {
       context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     };
 
     alienImg = new Image();
-    alienImg.src = "../img/alien.png";
+    alienImg.src = alienImage;
     createAliens();
 
     requestAnimationFrame(update);
