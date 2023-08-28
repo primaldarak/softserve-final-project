@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // preloadImages(["./img/player.png", "./img/alien.png", "./img/space.png"]);
+  preloadImages(["./img/player.png", "./img/alien.png", "./img/space.png"]);
 
   refreshScoreboard();
 });

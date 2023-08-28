@@ -16,15 +16,6 @@ function createSpaceWars() {
   startBtn.innerHTML = "Start Game";
   startBtn.classList.add("start-btn");
 
-  function preload_image(im_url) {
-    let img = new Image();
-    img.src = im_url;
-  }
-
-  preload_image("../img/space.png");
-  preload_image("../img/player.png");
-  preload_image("../img/alien.png");
-
   let tileSize = 32;
   let rows = 16;
   let columns = 16;
@@ -76,13 +67,13 @@ function createSpaceWars() {
 
     //load images
     shipImg = new Image();
-    shipImg.src = "../img/player.png";
+    shipImg.src = "./img/player.png";
     shipImg.onload = function (params) {
       context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     };
 
     alienImg = new Image();
-    alienImg.src = "../img/alien.png";
+    alienImg.src = "./img/alien.png";
     createAliens();
 
     requestAnimationFrame(update);
