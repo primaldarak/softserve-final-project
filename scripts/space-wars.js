@@ -16,6 +16,15 @@ function createSpaceWars() {
   startBtn.innerHTML = "Start Game";
   startBtn.classList.add("start-btn");
 
+  function preload_image(im_url) {
+    let img = new Image();
+    img.src = im_url;
+  }
+
+  preload_image("../img/space.png");
+  preload_image("../img/player.png");
+  preload_image("../img/alien.png");
+
   let tileSize = 32;
   let rows = 16;
   let columns = 16;
@@ -59,7 +68,6 @@ function createSpaceWars() {
   let score = 0;
   let gameOver = true;
 
-  // window.addEventListener("load", addGame);
   window.onload = addGame();
   function addGame() {
     const minigameWindow = document.querySelector(".play-minigames");
