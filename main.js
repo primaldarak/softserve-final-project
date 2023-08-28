@@ -19,10 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const playBtn = [...document.querySelectorAll(`.minigame-btn[data-game]`)];
   const minigameShowWindow = document.querySelector(".show-minigames");
 
-  function shareLocalStorage(params) {
-    if (localStorage.getItem(USERS) === null) {
-      localStorage.setItem(USERS, users);
-    }
+  if (localStorage.getItem(USERS) === null) {
+    localStorage.setItem(USERS, users);
   }
 
   if (sessionStorage.getItem(CURRENT_USER) === null) {
@@ -83,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   selectedGameScore.addEventListener("change", refreshScoreboard);
+  scoreboardBtn.addEventListener("click", refreshScoreboard);
   function refreshScoreboard() {
     const users = JSON.parse(localStorage.getItem(USERS));
     scoreboardInfo.innerHTML = ``;
@@ -239,6 +238,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   preloadImages(["./img/player.png", "./img/alien.png", "./img/space.png"]);
-
-  refreshScoreboard();
 });
