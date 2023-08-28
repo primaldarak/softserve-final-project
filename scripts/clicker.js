@@ -38,7 +38,7 @@ function createClicker() {
   resetBtn.addEventListener("click", resetGame);
 
   function startGame() {
-    const clickAudio = new Audio("../audio/clickAudio.wav");
+    const clickAudio = new Audio("./audio/clickAudio.wav");
     function playAudio() {
       clickAudio.play();
     }

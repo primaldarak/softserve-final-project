@@ -58,7 +58,7 @@ function createSpaceWars() {
 
   let score = 0;
   let gameOver = true;
-  const gameOverAudio = new Audio("../audio/gameOver.wav");
+  const gameOverAudio = new Audio("./audio/gameOver.wav");
   let playGameOverSound = false;
 
   window.onload = addGame();
