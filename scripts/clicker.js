@@ -21,7 +21,7 @@ function createClicker() {
   clickerInfo.className = "clicker-info";
 
   const resetBtn = document.createElement("button");
-  resetBtn.className = "clicker-reset-btn"; 
+  resetBtn.className = "clicker-reset-btn";
   resetBtn.innerHTML = "Reset";
 
   const getBestScore = document.createElement("p");
@@ -38,6 +38,10 @@ function createClicker() {
   resetBtn.addEventListener("click", resetGame);
 
   function startGame() {
+    const clickAudio = new Audio("../audio/clickAudio.wav");
+    function playAudio() {
+      clickAudio.play();
+    }
     let startTimer = 3;
     startInterval = setInterval(() => {
       clickButton.innerHTML = `${startTimer}`;
@@ -46,7 +50,9 @@ function createClicker() {
         clickButton.innerHTML = `Start!!!`;
         clearInterval(startInterval);
         clickButton.addEventListener("click", startCliker);
+        clickButton.addEventListener("click", playAudio);
         clickerTimer = setTimeout(() => {
+          clickButton.removeEventListener("click", playAudio);
           clickButton.removeEventListener("click", startCliker);
           setBestScore(clickCount);
         }, 5000);

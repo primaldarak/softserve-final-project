@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const playBtn = [...document.querySelectorAll(`.minigame-btn[data-game]`)];
   const minigameShowWindow = document.querySelector(".show-minigames");
 
-  if (localStorage.getItem(USERS) === null) {
-    localStorage.setItem(USERS, users);
+  function shareLocalStorage(params) {
+    if (localStorage.getItem(USERS) === null) {
+      localStorage.setItem(USERS, users);
+    }
   }
 
   if (sessionStorage.getItem(CURRENT_USER) === null) {
@@ -84,10 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function refreshScoreboard() {
     const users = JSON.parse(localStorage.getItem(USERS));
     scoreboardInfo.innerHTML = ``;
+    users.sort((a, b) => b.bestScore[selectedGameScore.value] - a.bestScore[selectedGameScore.value]);
 
     users.forEach((e, i) => {
-      if (e.bestScore[selectedGameScore.value] == undefined) {
-        e.bestScore[selectedGameScore.value] = 0;
+      if (e.bestScore[selectedGameScore.value] == undefined || e.bestScore[selectedGameScore.value] == 0) {
+        return;
       }
       const score = document.createElement("p");
       score.innerHTML = `${i + 1}. ${e.login} - ${e.bestScore[`${selectedGameScore.value}`]}`;

@@ -58,6 +58,8 @@ function createSpaceWars() {
 
   let score = 0;
   let gameOver = true;
+  const gameOverAudio = new Audio("../audio/gameOver.wav");
+  let playGameOverSound = false;
 
   window.onload = addGame();
   function addGame() {
@@ -124,6 +126,11 @@ function createSpaceWars() {
 
         if (alien.y >= ship.y) {
           gameOver = true;
+          playGameOverSound = true;
+          if (playGameOverSound) {
+            gameOverAudio.play();
+            playGameOverSound = false;
+          }
           setBestScore(score);
         }
       }
@@ -204,11 +211,14 @@ function createSpaceWars() {
   }
 
   function shoot(e) {
+    const shootAudio = new Audio("../audio/shootAudio.wav");
+
     if (gameOver) {
       return;
     }
 
     if (e.code == "Space") {
+      shootAudio.play();
       //shoot
       let bullet = {
         x: ship.x + (shipWidth * 15) / 32,
