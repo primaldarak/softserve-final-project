@@ -211,7 +211,7 @@ function createSpaceWars() {
   }
 
   function shoot(e) {
-    const shootAudio = new Audio("../audio/shootAudio.wav");
+    const shootAudio = new Audio("./audio/shootAudio.wav");
 
     if (gameOver) {
       return;
